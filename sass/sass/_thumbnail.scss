@@ -2,6 +2,7 @@
     padding-top: 20px;
     a {
         display: block;
+        border-radius: 3px;
         @include aSetting(#555);
         position: relative;
         box-shadow: 3px 3px 5px hsla(0, 0%, 20%, .5);
@@ -46,6 +47,7 @@
     .img-container {
         @include aspect-ratio(16, 9);
         margin-bottom: .5em;
+         border-radius: 3px 3px 0 0;
     }
     h2, h3, h4 {
         margin: .2em 0;
