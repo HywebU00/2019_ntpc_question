@@ -1,0 +1,365 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// 範例：
+.demosection {
+    [class^="col"] {
+        // border: 2px solid #FFF;
+        // background: #DEDEDE;
+    }
+}
+// 首頁輪播
+.mpSlider {
+    width: 100%;
+    padding-bottom: 3em;
+    @include gutter(0);
+    .img-container {
+        @include aspect-ratio(5, 2);
+    }
+}
+// 廣告輪播
+.adSlider {
+    @include gutter(70px);
+    margin-bottom: 20px;
+    @include screen('mobile') {
+        @include gutter();
+    }
+    .slick-prev {
+        background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
+        background-size: 80%;
+        left: -15px;
+    }
+    .slick-next {
+        background: url(../vendor/slick/icon_arrow_right_inverse.png) no-repeat center center;
+        background-size: 80%;
+        right: -15px;
+    }
+    .img-container {
+        width: 165px;
+        height: 55px;
+        margin: 0px 15px;
+        a {
+            display: block;
+            text-align: center;
+            img {
+                margin: 0 auto;
+            }
+        }
+        &:focus {
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                box-shadow: 0 0px 0px 3px $primaryColor inset;
+            }
+        }
+    }
+}
+//自我檢驗
+// 首頁start
+.picfixed {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    overflow-y: auto;
+    overflow-x: auto; 
+
+    @include screen('tablet') {
+        height: 100%;
+    }
+}
+.mpstart {
+    position: fixed;
+    background-image: url('../images/mp_startbg.jpg');
+    h1 {
+        position: absolute;
+        margin: 110px 5%;
+        padding: 0;
+        a {
+            display: block;
+        }
+        @media(max-width: 660px) {
+            height: 220px;
+            margin: 30px 5% 20px;
+            overflow: hidden;
+            position: relative;
+            img {
+                width: 100%;
+                margin: 0 auto;
+                left: auto;
+            }
+        }
+        @media(max-width: 580px) {
+            height: 200px;
+            margin: 30px 5% 20px;
+        }
+        @media(max-width: 480px) {
+            height: 160px;
+        }
+        @media(max-width: 375px) {
+            height: 140px;
+        }
+        @media(max-width: 340px) {
+            height: 120px;
+            margin: 30px 5% 0px;
+        }
+    }
+    .explain {
+        margin: 0;
+        position: absolute;
+        top: 220px;
+        right: 20%;
+        font-size: 1.875em;
+        line-height: 1.7em;
+        color: #fff;
+        transition: .5s;
+        @media(max-width: 1100px) {
+            right: 10%;
+        }
+        @media(max-width: 900px) {
+            top: 290px;
+        }
+        @include screen('mobile') {
+            right: 5%;
+        }
+        @media(max-width: 660px) {
+            position: relative;
+            width: 86%;
+            margin: 0 auto 20px;
+            padding: 5px 40px 40px;
+            right: auto;
+            top: auto;
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, .4);
+        }
+        @media(max-width: 480px) {
+            br {
+                display: none;
+            }
+            font-size: 1.75em;
+        }
+        @media(max-width: 375px) {
+            padding: 5px 30px 20px;
+            font-size: 1.562em;
+        }
+        .startbtn {
+            color: #fff;
+            width: 240px;
+            a {
+                display: block;
+                background-color: $color-orange;
+                color: #fff;
+                padding: 14px 35px;
+                border-radius: 5px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    border: 5px solid #fff;
+                    border-bottom: none;
+                    border-left: none;
+                    transform: rotate(45deg);
+                    width: 15px;
+                    height: 15px;
+                    top: 30px;
+                    right: 30px;
+                    transition: .5s;
+                }
+                &:hover {
+                    background-color: darken($color-orange, 10);
+                    &:before {
+                        right: 40px;
+                    }
+                }
+            }
+            @media(max-width: 375px) {
+                width: 100%;
+            }
+        }
+    }
+}
+// 問卷start
+.questionnaire {
+    &.no01 {
+        background-image: url('../images/questionbg_pic01.jpg');
+    }
+    &.no02 {
+        background-image: url('../images/questionbg_pic02.jpg');
+    }
+    &.no03 {
+        background-image: url('../images/questionbg_pic03.jpg');
+    }
+    &.no04 {
+        background-image: url('../images/questionbg_pic04.jpg');
+    }
+    &.no05 {
+        background-image: url('../images/questionbg_pic05.jpg');
+    }
+    &.no06 {
+        background-image: url('../images/questionbg_pic06.jpg');
+    }
+    &.no07 {
+        background-image: url('../images/questionbg_pic07.jpg');
+    }
+    &.no08 {
+        background-image: url('../images/questionbg_pic08.jpg');
+    }
+    &.no09 {
+        background-image: url('../images/questionbg_pic09.jpg');
+    }
+    &.no10 {
+        background-image: url('../images/questionbg_pic10.jpg');
+    }
+    &.no11 {
+        background-image: url('../images/questionbg_pic11.jpg');
+    }
+    &.no12 {
+        background-image: url('../images/questionbg_pic12.jpg');
+    }
+    h1 {
+        display: inline-block;
+        margin-left: 15px;
+        a {
+            display: block;
+        }
+        img {
+            width: 312px;
+        }
+        @include screen('xs_mobile') {
+            text-align: center;
+            display: block;
+            margin-left: 0;
+        }
+    }
+    .contentblock {
+        clear: both;
+        float: none;
+        margin-top: -100px;
+        @include screen('xs_mobile') {
+            margin-top: -70px;
+        }
+    }
+    h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin: 0 0 20px;
+        padding: 0;
+        color: #fff;
+        font-weight: 400;
+        text-shadow: 2px 2px 3px hsla(0, 0%, 20%, .8);
+        span {
+            font-size: 1.7em;
+            font-family: frutiger;
+            font-weight: 400;
+            margin-right: 10px;
+            display: inline-block;
+        }
+    }
+    .check_description {
+        text-align: center;
+        color: #fff;
+        margin: 0 0 37px;
+        text-shadow: 2px 2px 3px hsla(0, 0%, 20%, .8);
+    }
+}
+// 選頁
+.page_block {
+    width: 50%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+    float: right;
+    @include screen('mobile') {
+        float: none;
+        width: 100%;
+        margin: 0 auto 30px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        @include screen('mobile') {
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            margin-left: 10px;
+            @include screen('mobile') {
+                margin: 0 10px;
+            }
+            @media (max-width:380px ){
+                margin: 0 10px 10px;
+
+            }
+            a {
+                display: block;
+                padding: 12px 27px;
+                background-color: $color-orange;
+                color: #fff;
+                border-radius: 50px;
+                font-size: 1.125em;
+                &:hover {
+                    background-color: darken($color-orange, 5);
+                }
+                &.prev_btn {
+                    background-image: url('../images/icon_btn_prev.png');
+                    background-repeat: no-repeat;
+                    background-position: 20px 12px;
+                    padding: 12px 27px 12px 55px;
+                }
+                &.next_btn {
+                    background-image: url('../images/icon_btn_next.png');
+                    background-repeat: no-repeat;
+                    background-position: 95px 12px;
+                    padding: 12px 55px 12px 27px;
+                }
+            }
+        }
+    }
+}
+// 完成題數
+.schedule_block {
+    width: 260px;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    @include screen('mobile') {
+        float: none;
+        margin: 0 auto 30px;
+        width: 85%;
+    }
+    .schedule_question {
+        text-shadow: 3px 3px 5px hsla(0, 0%, 20%, 1);
+        color: #fff;
+        margin-bottom: 8px;
+        em{
+            width: 25px;
+            height: 25px;
+            border-radius:50%;
+            text-align: center;
+            font-style: normal;
+            color:#fff;
+            background-color: #3797b4;
+            display: inline-block;
+            text-shadow: none;
+            line-height: 25px;
+            margin:0 5px;
+        }
+    }
+    .schedule {
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, .5);
+        width: 100%;
+        height: 17px;
+        box-shadow: 3px 3px 5px hsla(0, 0%, 20%, .5);
+        overflow: hidden;
+    }
+}

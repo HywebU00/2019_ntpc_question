@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>單位名稱切版檔案</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- hyUI -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <style>
+    body {}
+    .demo_wrap {
+        max-width: 1000px;
+        min-height: 100%;
+        margin: 0em auto 1em;
+        padding: 15px 15px 3em;
+        clear: both;
+        position: relative
+    }
+    .demo_wrap h1 {
+        display: block;
+        margin: 0px auto;
+        width: 100%;
+        float: left;
+        margin-right: 1em;
+        background: #ccc;
+        height: 120px;
+    }
+    @media screen and (max-width:545px) {
+        .demo_wrap h1 {
+            max-width: 100%;
+            float: none;
+            text-align: center
+        }
+    }
+    .demo_wrap h1 img {
+        width: 300px;
+        margin-left: 20px;
+    }
+    .num {
+        width: 12%
+    }
+    body {
+        counter-reset: num
+    }
+    table {
+        margin-bottom: 1em;
+        background: #FFF;
+    }
+    table caption {
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.25em;
+        padding: .5em 0;
+        color: #ff5050
+    }
+    tbody tr td:first-child:before {
+        counter-increment: num;
+        display: block;
+        text-align: center;
+        content: counters(num, ".") " "
+    }
+    tbody tr td:nth-child(2) {
+        width: 35%
+    }
+    .btn_grp {
+        text-align: right;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+    }
+    @media screen and (max-width:545px) {
+        .btn_grp {
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="demo_wrap">
+        <h1><img src="images/logo.png" alt=""></h1>
+        <div class="btn_grp">
+            <a href="#" class="btn">切版檔案請按此下載</a>
+        </div>
+        <hr>
+        <div class="table_wrapper">
+            <!-- hyUI 標準頁面 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面名稱</th>
+                        <th>檔案名稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>首頁</td>
+                        <!-- 連結放到a裡面就好 -->
+                        <td><a href="mp.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷01</td>
+                        <td><a href="questionnaire01.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷02</td>
+                        <td><a href="questionnaire02.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷03</td>
+                        <td><a href="questionnaire03.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷04</td>
+                        <td><a href="questionnaire04.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷05</td>
+                        <td><a href="questionnaire05.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷06</td>
+                        <td><a href="questionnaire06.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷07</td>
+                        <td><a href="questionnaire07.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷08</td>
+                        <td><a href="questionnaire08.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷09</td>
+                        <td><a href="questionnaire09.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷10</td>
+                        <td><a href="questionnaire10.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷11</td>
+                        <td><a href="questionnaire11.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷12</td>
+                        <td><a href="questionnaire12.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷_健康結果_簡易版</td>
+                        <td><a href="result_page01.htm"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery.easing.min.js"></script>
+    <script src="js/hyui.js"></script>
+    <script src="js/customize.js"></script>
+    <script>
+    $(function() {
+        $('tbody').find('a').each(function(index, el) {
+            var Link = $(this).attr('href');
+            $(this).text(Link);
+        });
+    })
+    </script>
+</body>
+
+</html>
