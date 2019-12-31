@@ -1,6 +1,11 @@
 .resultpage {
     background-image: url('../images/result_bg.jpg');
     height: 100% !important;
+    background-size: 100%;
+    background-color: #ebebeb;
+    @include screen('xs_mobile'){
+        background-size: 200%;
+    }
     h1 {
         display: inline-block;
         margin-left: 15px;
@@ -24,10 +29,10 @@
     h2 {
         margin: -90px auto 40px;
         padding: 0;
-        width: 391px;
+        width: 410px;
         img {
-            width: 391px;
-            height: 136px;
+            width: 410px;
+            height: 170px;
         }
         @media(max-width: 480px) {
             width: auto;
@@ -55,7 +60,7 @@
             border-radius: 20px;
             padding: 35px 20px 35px;
         }
-        @media(max-width: 380px){
+        @media(max-width: 380px) {
             font-size: 1.75em;
             padding: 35px 10px 35px;
         }
@@ -122,7 +127,7 @@
             margin: 0;
             padding: 0px 20px;
             @include box-sizing(border-box);
-            @media(max-width: 380px){
+            @media(max-width: 380px) {
                 padding: 0px 10px;
             }
             li {
@@ -160,16 +165,24 @@
 }
 .blackbtn {
     @include gradient(#909090, #070808, vertical);
-    padding: 18px 70px;
+    padding: 18px 60px;
     color: #fff;
     font-size: 1.75em;
     border: none;
-    margin-bottom: 45px;
-    @media(max-width: 380px){
-        padding: 18px 20px;
-        width: 8    0%;
+    margin-bottom: 20px;
+    br {
+        display: none
     }
-    &:hover {
+    @include screen('mobile') {
+        display: block;
+        width: 80%;
+        margin: 0 auto 20px;
+        padding: 18px 20px;
+        br {
+            display: block
+        }
+    }
+    &:hover, &:focus {
         @include gradient(#070808, #070808, vertical);
         border: none !important;
         padding: 18px 70px;
@@ -192,6 +205,234 @@
         li {
             display: inline-block;
             margin: 0 3px;
+        }
+    }
+}
+// 檢討
+.general_review {
+    background-color: rgba(255, 255, 255, .6);
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 3px;
+    .headerblock {
+        background-color: #fff;
+        padding: 20px 40px 10px;
+        overflow: hidden;
+        border-radius: 3px 3px 0 0;
+        @include screen('mobile') {
+            padding: 20px 20px 10px;;
+        }
+        h3 {
+            margin: 0;
+            padding: 0;
+            float: left;
+            font-size: 1.875em;
+            @include screen('xs_mobile') {
+                float: none;
+                 margin: 0 0 15px;
+            }
+        }
+        .list_item {
+            float: right;
+            text-align: right;
+            font-size: 1.25em;
+            @include screen('xs_mobile') {
+                float: none;
+            }
+            
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    display: inline-block;
+                    margin-left: 30px;
+                    @media(max-width: 480px){
+                        margin-left: 5px;
+                    }
+                    img {
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                    em {
+                        font-style: normal;
+                        padding: 0 3px;
+                        &.wordgreen {
+                            color: #35bda0;
+                        }
+                        &.wordred {
+                            color: #e65633;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contentblock {
+        padding: 0 35px 35px;
+        @include screen('mobile') {
+            padding: 0 20px 35px;
+        }
+        .chapter_block {
+            padding: 20px 0;
+            border-bottom: 1px solid #c9c9c9;
+            overflow: hidden;
+        }
+        .leftblock {
+            @include make-xs-column(12); //576px  width:100%
+            @include make-sm-column(2); //768px  width:100%
+            @include make-md-column(2); //992px  width:100%
+            @include make-lg-column(2); //1400px width:100%
+            @include gutter(0);
+        }
+        .rightblock {
+            @include make-xs-column(12); //576px  width:100%
+            @include make-sm-column(10); //768px  width:50%
+            @include make-md-column(10); //992px  width:33.3%
+            @include make-lg-column(10); //1400px width:33.3%
+            @include gutter(0);
+        }
+        h4 {
+            margin: 0 0 10px;
+            background-color: #e65633;
+            text-align: center;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 1.5em;
+            border-radius: 50px;
+            width: 130px;
+            @include screen('tablet') {
+                width: 110px;
+            }
+            &.orangebg {
+                background-color: #ec9900;
+            }
+            &.greenbg {
+                background-color: #35bda0;
+            }
+        }
+        .rightblock {
+            text-align: left;
+            .topic_block {
+                .topic {
+                    font-size: 1.25em;
+                    position: relative;
+                    img {
+                        vertical-align: middle;
+                        margin-right: 14px;
+                        margin-left: -46px;
+                    }
+                    a {
+                        display: block;
+                        padding: 10px 50px 10px 55px;
+                        color: #000;
+                        position: relative;
+                        transition: .5s;
+                        &:hover {
+                            background-color: rgba(255, 255, 255, .5);
+                            border-radius: 3px;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        border: 2px solid #707070;
+                        width: 8px;
+                        height: 8px;
+                        border-top: none;
+                        border-left: none;
+                        right: 20px;
+                        top: 18px;
+                        transform: rotate(45deg);
+                        transition: .5s;
+                    }
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background-color: #dcdcdc;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        right: 5px;
+                        top: 5px;
+                    }
+                    &.open {
+                        &:after {
+                            transform: rotate(-135deg);
+                            top: 22px;
+                        }
+                    }
+                }
+                // 內容
+                .skill {
+                    background-color: rgba(211, 211, 211, .7);
+                    padding: 10px;
+                    line-height: 1.6em;
+                    margin-left: 50px;
+                    margin-bottom: 10px;
+                    position: relative;
+                    border-radius: 3px;
+                    display: none;
+                    overflow: hidden;
+                    span {
+                        background-color: #000;
+                        color: #fff;
+                        padding: 8px;
+                        display: block;
+                        margin-bottom: 8px;
+                        width: 130px;
+                    }
+                    &.haspic {
+                        padding: 10px 180px 10px 10px;
+                    }
+                    .image {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        width: 145px;
+                        height: 100px;
+                        overflow: hidden;
+                        a {
+                            position: relative;
+                            display: block;
+                            vertical-align: top;
+                            width: 145px;
+                            height: 110px;
+                            img {
+                                width: 145px;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                max-width: 100%;
+                                max-height: 100%;
+                                margin: auto;
+                            }
+                            &:before {
+                                content: "瀏覽更多照片";
+                                position: absolute;
+                                width: 145px;
+                                height: 30px;
+                                padding: 1px 8px;
+                                background-color: #000;
+                                color: #fff;
+                                bottom: 10px;
+                                font-size: .813em;
+                                z-index: 9;
+                                background-image: url('../images/icon_pic.png');
+                                background-repeat: no-repeat;
+                                background-position: 120px 10px;
+                                border-radius: 0 !important;
+                                right: auto;
+                                top: auto;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

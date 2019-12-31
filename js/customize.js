@@ -33,14 +33,14 @@ $(function() {
                 slidesToScroll: 1,
                 arrows: true
             }
-        },{
+        }, {
             breakpoint: 768,
             settings: {
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 arrows: true
             }
-        },{
+        }, {
             breakpoint: 575,
             settings: {
                 slidesToShow: 3,
@@ -96,7 +96,7 @@ $(function() {
         ease: 'ease',
         lazy: true
     });
-     // cp_photo
+    // cp_photo
     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
@@ -118,20 +118,27 @@ $(function() {
         asNavFor: '.Slider-for',
         dots: true,
         arrows: true,
-        lazyLoad: 'ondemand',
+        lazyLoads: 'ondemand',
         focusOnSelect: true,
         infinite: true
     });
-
     // 勾選
-    $('.thumbnail>a').click(function(){
+    $('.thumbnail>a').click(function() {
         $(this).toggleClass('tick');
         // $(this).parents('li').siblings().find('.thumbnail>a').removeClass('tick');
         $('.no_choose>').removeClass('tick');
-
     })
-    $('.no_choose>a').click(function(){
+    $('.no_choose>a').click(function() {
         $(this).addClass('tick');
         $('.thumbnail>a').removeClass('tick');
+    })
+    // 檢討
+    $('.topic_block .topic').click(function() {
+        $(this).next('.skill').slideToggle();
+        // $(this).parent().siblings().children('.skill').slideUp();
+        $(this).parents('.chapter_block').siblings().find('.skill').slideUp();
+        $(this).toggleClass('open');
+        $(this).parent().siblings().children('.topic').removeClass('open');
+        
     })
 });
