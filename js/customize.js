@@ -138,7 +138,8 @@ $(function() {
         // $(this).parent().siblings().children('.skill').slideUp();
         $(this).parents('.chapter_block').siblings().find('.skill').slideUp();
         $(this).toggleClass('open');
-        $(this).parent().siblings().children('.topic').removeClass('open');
+        $(this).parents('.chapter_block').siblings().find('.topic').removeClass('open');
+        // $(this).parent().siblings().children('.topic').removeClass('open');
         
     })
 });
