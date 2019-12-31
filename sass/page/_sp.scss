@@ -386,6 +386,9 @@
                     }
                     &.haspic {
                         padding: 10px 180px 10px 10px;
+                        @include screen('xs_mobile'){
+                            padding:10px;
+                        }
                     }
                     .image {
                         position: absolute;
@@ -394,6 +397,12 @@
                         width: 145px;
                         height: 100px;
                         overflow: hidden;
+                        @include screen('xs_mobile'){
+                            position: relative;
+                            margin:10px 0 0;
+                            top:auto;
+                            right:auto;
+                        }
                         a {
                             position: relative;
                             display: block;
