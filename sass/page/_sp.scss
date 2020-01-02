@@ -88,6 +88,7 @@
         }
     }
 }
+// 風險區塊
 .risk_block {
     overflow: hidden;
     margin-bottom: 25px;
@@ -163,6 +164,7 @@
         }
     }
 }
+// 按鈕
 .blackbtn {
     @include gradient(#909090, #070808, vertical);
     padding: 18px 60px;
@@ -189,6 +191,7 @@
         color: #fff;
     }
 }
+// 分享區塊
 .share_blcok {
     text-align: center;
     font-size: 1.25em;
@@ -376,18 +379,20 @@
                     border-radius: 3px;
                     display: none;
                     overflow: hidden;
+                    font-size: 1.125em;
+                    text-align: left;
                     span {
                         background-color: #000;
                         color: #fff;
                         padding: 8px;
                         display: block;
                         margin-bottom: 8px;
-                        width: 130px;
+                        width: 110px;
                     }
                     &.haspic {
                         padding: 10px 180px 10px 10px;
-                        @include screen('xs_mobile'){
-                            padding:10px;
+                        @include screen('xs_mobile') {
+                            padding: 10px;
                         }
                     }
                     .image {
@@ -397,11 +402,11 @@
                         width: 145px;
                         height: 100px;
                         overflow: hidden;
-                        @include screen('xs_mobile'){
+                        @include screen('xs_mobile') {
                             position: relative;
-                            margin:10px 0 0;
-                            top:auto;
-                            right:auto;
+                            margin: 10px 0 0;
+                            top: auto;
+                            right: auto;
                         }
                         a {
                             position: relative;
@@ -442,6 +447,74 @@
                     }
                 }
             }
+        }
+    }
+}
+// 各篇說明
+.chapter_explain {
+    background-color: rgba(255, 255, 255, .7);
+    padding: 20px 40px;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto 40px;
+    @media(max-width: 480px) {
+        padding: 20px;
+    }
+    .chapter_title {
+        margin: 0 0 10px;
+        background-color: #e65633;
+        text-align: center;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1.5em;
+        border-radius: 50px;
+        width: 130px;
+        @include screen('tablet') {
+            width: 110px;
+        }
+        &.orangebg {
+            background-color: #ec9900;
+        }
+        &.greenbg {
+            background-color: #35bda0;
+        }
+    }
+    .topic {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(3); //768px  width:100%
+        @include make-md-column(3); //992px  width:100%
+        @include make-lg-column(3); //1400px width:100%
+        @include gutter(0);
+        font-size: 1.875em;
+        font-weight: 600;
+        line-height: 1.4em;
+        padding-top: 7px;
+        padding-right: 40px;
+        @media(max-width: 480px) {
+            padding-right: 0px;
+        }
+    }
+    .skill {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(9); //768px  width:100%
+        @include make-md-column(9); //992px  width:100%
+        @include make-lg-column(9); //1400px width:100%
+        padding: 10px;
+        line-height: 1.6em;
+        margin: 0;
+        position: relative;
+        border-radius: 3px;
+        overflow: hidden;
+        font-size: 1.125em;
+        span {
+            background-color: #000;
+            color: #fff;
+            padding: 8px;
+            display: block;
+            margin-bottom: 8px;
+            width: 110px;
         }
     }
 }

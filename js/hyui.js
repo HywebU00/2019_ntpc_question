@@ -215,7 +215,7 @@ $(function() {
     });
     // 固定版頭
     hh = Math.floor($('.header').outerHeight(true));
-    if ($('header').has('menu')) {
+    if ($('header menu').length>0) {
         var stickyMenuTop = Math.floor($('.header .menu').offset().top);
         // console.log(stickyMenuTop);
         hh = Math.floor($('.header').outerHeight(true));

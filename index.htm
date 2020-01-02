@@ -31,7 +31,7 @@
         background: #ccc;
         height: 120px;
     }
-    @media screen and (max-width:545px) {
+    @media(max-width: 575px) {
         .demo_wrap h1 {
             max-width: 100%;
             float: none;
@@ -42,11 +42,32 @@
         width: 300px;
         margin-left: 20px;
     }
+    @media(max-width: 480px) {
+        .demo_wrap h1 img {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    .btn_grp {
+        text-align: right;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+    }
+    @media(max-width: 575px) {
+        .btn_grp {
+            position: relative;
+            text-align: center;
+            right: auto;
+            top: auto;
+            margin-bottom: 0;
+        }
+    }
     .num {
         width: 12%
     }
     body {
-        counter-reset: num
+        counter-reset: num;
     }
     table {
         margin-bottom: 1em;
@@ -68,15 +89,32 @@
     tbody tr td:nth-child(2) {
         width: 35%
     }
-    .btn_grp {
-        text-align: right;
-        position: absolute;
-        right: 50px;
-        top: 30px;
-    }
-    @media screen and (max-width:545px) {
-        .btn_grp {
-            text-align: center;
+    @media(max-width: 480px) {
+        thead {
+            display: none;
+        }
+        tbody tr{
+            margin-bottom: 10px;
+            display: block;
+            position: relative
+        }
+        tbody tr td:first-child {
+            background: #eee;
+        }
+        tbody tr td:first-child:before {
+            text-align: left;
+            z-index: 9;
+
+        }
+        
+        tbody tr td {
+            display: block;
+        }
+        tbody tr td:nth-child(2) {
+            width: auto;
+        }
+        .table_wrapper table {
+            min-width: auto
         }
     }
     </style>
@@ -175,6 +213,11 @@
                         <td></td>
                         <td>問卷_健康結果_完整版</td>
                         <td><a href="result_page02.htm"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>問卷_健康結果_完整版_瀏覽照片</td>
+                        <td><a href="result_page03.htm"></a></td>
                     </tr>
                 </tbody>
             </table>

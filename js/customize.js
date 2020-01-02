@@ -123,14 +123,14 @@ $(function() {
         infinite: true
     });
     // 勾選
-    $('.thumbnail>a').click(function() {
+    $('.thumbnail2>a').click(function() {
         $(this).toggleClass('tick');
         // $(this).parents('li').siblings().find('.thumbnail>a').removeClass('tick');
         $('.no_choose>').removeClass('tick');
     })
     $('.no_choose>a').click(function() {
         $(this).addClass('tick');
-        $('.thumbnail>a').removeClass('tick');
+        $('.thumbnail2>a').removeClass('tick');
     })
     // 檢討
     $('.topic_block .topic').click(function() {
