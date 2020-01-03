@@ -75,10 +75,16 @@
     ul {
         @include li-reset;
         text-align: center;
+        margin-bottom: 20px;
+        overflow:hidden;
+        padding-bottom: 10px;
         li {
             @include make_col(4, 2);
             overflow: visible;
             vertical-align: top;
+            float: left!important;
+            display: block!important;
+            margin:0 1%!important;
             .thumbnail {
                 width: 100%;
                 margin: 0 auto 1em;
@@ -86,8 +92,10 @@
                     width: 98%;
                 }
             }
+
             @media(max-width: 480px) {
                 @include make_col(4, 1);
+                overflow: visible;
             }
         }
     }
@@ -97,8 +105,9 @@
         clear: both;
         float: none;
         @include screen('mobile') {
-            width: 96%;
+            width: 98%;
         }
+        
         a {
             display: block;
             padding: 0px 30px;
