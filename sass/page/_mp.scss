@@ -152,7 +152,7 @@
         }
         .startbtn {
             color: #fff;
-            width: 240px;
+            // width: 240px;
             a {
                 display: block;
                 background-color: $color-orange;
@@ -169,7 +169,7 @@
                     transform: rotate(45deg);
                     width: 15px;
                     height: 15px;
-                    top: 30px;
+                    top: 40%;
                     right: 30px;
                     transition: .5s;
                 }
@@ -231,7 +231,7 @@
             display: block;
         }
         img {
-            width: 312px;
+            width: 300px;
         }
         @include screen('xs_mobile') {
             text-align: center;
@@ -244,7 +244,7 @@
         float: none;
         margin-top: -100px;
         @include screen('xs_mobile') {
-            margin-top: -70px;
+            margin-top: -80px;
         }
     }
     h2 {
@@ -266,7 +266,7 @@
     .check_description {
         text-align: center;
         color: #fff;
-        margin: 0 0 37px;
+        margin: 0 0 20px;
         text-shadow: 2px 2px 3px hsla(0, 0%, 20%, .8);
     }
 }
@@ -311,13 +311,13 @@
                 &.prev_btn {
                     background-image: url('../images/icon_btn_prev.png');
                     background-repeat: no-repeat;
-                    background-position: 20px 12px;
+                    background-position: 20px 50%;
                     padding: 12px 27px 12px 55px;
                 }
                 &.next_btn {
                     background-image: url('../images/icon_btn_next.png');
                     background-repeat: no-repeat;
-                    background-position: 95px 12px;
+                    background-position: 88% 50%;
                     padding: 12px 55px 12px 27px;
                 }
             }
@@ -326,19 +326,22 @@
 }
 // 完成題數
 .schedule_block {
-    width: 260px;
+    width: 280px;
     float: left;
     margin-left: 5%;
     margin-bottom: 50px;
     @include screen('mobile') {
         float: none;
         margin: 0 auto 30px;
-        width: 85%;
+        width: 90%;
     }
     .schedule_question {
         text-shadow: 3px 3px 5px hsla(0, 0%, 20%, 1);
         color: #fff;
         margin-bottom: 8px;
+        @include screen('mobile'){
+            text-align: center;
+        }
         em{
             width: 25px;
             height: 25px;

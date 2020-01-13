@@ -92,8 +92,8 @@
                     width: 98%;
                 }
             }
-
-            @media(max-width: 480px) {
+            @include screen('xs_mobile')
+            {
                 @include make_col(4, 1);
                 overflow: visible;
             }

@@ -3,27 +3,17 @@
     a {
         display: block;
         border-radius: 3px;
+        color: #333;
         @include aSetting(#555);
         position: relative;
         box-shadow: 3px 3px 5px hsla(0, 0%, 20%, .5);
         background-color: #FFF;
-        // &:focus {
-        //     &:before {
-        //         content: "";
-        //         position: absolute;
-        //         width: 100%;
-        //         height: 100%;
-        //         left: 0;
-        //         top: 0;
-        //         right: 0;
-        //         bottom: 0;
-        //         z-index: 1;
-        //         box-shadow: 0px 0px 0px 1px $aHover inset;
-        //     }
-        // }
+       
         &:hover {
-            background-color: #e97a60;
-            color: #fff;
+            color: #e97a60;
+        }
+        &:visited {
+            color: #333;
         }
         &.tick {
             position: relative;
@@ -42,6 +32,11 @@
                 top: -20px;
                 z-index: 999;
             }
+            .caption{
+                h3{
+                    color: #fff;
+                }
+            }
         }
     }
     .img-container {
@@ -55,11 +50,18 @@
     .caption {
         width: 90%;
         margin: 0 auto;
-        padding-bottom: 1em;
-        height: 70px;
-        line-height: 1.8em;
-        h3{
+        padding-bottom: .5em;
+        min-height: 5.2em;
+        line-height: 1.7em;
+        h3 {
             text-align: left;
+            color: #333;
+            &:hover {
+                color: #e97a60  ; 
+            }
+            &:visited {
+                color: #333;
+            }
         }
     }
     .btn_grp {
@@ -71,7 +73,6 @@
         margin: .1em auto 1em;
     }
 }
-
 .thumbnail {
     padding-top: 20px;
     a {
@@ -99,7 +100,6 @@
             background-color: #e97a60;
             color: #fff;
         }
-        
     }
     .img-container {
         @include aspect-ratio(4, 3);
