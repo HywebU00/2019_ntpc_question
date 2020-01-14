@@ -133,6 +133,7 @@ $(function() {
         $('.thumbnail2>a').removeClass('tick');
     })
     // 檢討
+    $('.haspic').hide();
     $('.topic_block .topic').click(function() {
         $(this).next('.skill').slideToggle();
         // $(this).parent().siblings().children('.skill').slideUp();
